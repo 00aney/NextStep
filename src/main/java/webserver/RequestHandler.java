@@ -62,6 +62,8 @@ public class RequestHandler extends Thread {
 	    		
 	    		DataOutputStream dos = new DataOutputStream(out);
 	    		response302Header(dos, "/index.html");
+    		} else if("/user/login.html".equals(url)) {
+    			
     		} else {
     			DataOutputStream dos = new DataOutputStream(out);
     			byte[] body = Files.readAllBytes(new File("./webapp" + url).toPath());
