@@ -9,13 +9,12 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import db.DataBase;
 import model.User;
 import util.IOUtils;
 
@@ -60,10 +59,17 @@ public class RequestHandler extends Thread {
 	    		User user = new User(params.get("userId"), params.get("password"), params.get("name"), params.get("email"));
 	    		log.debug("User : {}", user);
 	    		
+	    		DataBase.addUser(user);
+	    		
 	    		DataOutputStream dos = new DataOutputStream(out);
 	    		response302Header(dos, "/index.html");
-    		} else if("/user/login.html".equals(url)) {
+    		} else if("/user/login".equals(url)) {
     			
+    		} else if(url.endsWith(".css")) {
+    			DataOutputStream dos = new DataOutputStream(out);
+    			byte[] body = Files.readAllBytes(new File("./webapp"+url).toPath());
+    			response200CssHeader(dos, body.length);
+    			responseBody(dos, body);
     		} else {
     			DataOutputStream dos = new DataOutputStream(out);
     			byte[] body = Files.readAllBytes(new File("./webapp" + url).toPath());
@@ -116,6 +122,17 @@ public class RequestHandler extends Thread {
         } catch (IOException e) {
             log.error(e.getMessage());
         }
+    }
+    
+    private void response200CssHeader(DataOutputStream dos, int lengthOfBodyContent) {
+    	try {
+    		dos.writeBytes("HTTP/1.1 200 OK \r\n");
+            dos.writeBytes("Content-Type: text/css\r\n");
+            dos.writeBytes("Content-Length: " + lengthOfBodyContent + "\r\n");
+            dos.writeBytes("\r\n");
+    	} catch (IOException e) {
+    		log.error(e.getMessage());
+    	}
     }
 
     private void responseBody(DataOutputStream dos, byte[] body) {
