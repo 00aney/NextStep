@@ -29,7 +29,6 @@ memos 에 공부 내용 정리
 
 ### 요구사항 4 - redirect 방식으로 이동
 * HTTP 응답 헤더 : 302
-* 요구사항 5 - cookie
 
 ### 요구사항 5 - cookie
 * url.startWith 에서 login.html 접근하는것과 login  접근하려고 할 때, 구분하기위해 equals 로 변경
