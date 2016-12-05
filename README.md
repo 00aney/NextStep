@@ -32,6 +32,8 @@ memos 에 공부 내용 정리
 * 요구사항 5 - cookie
 
 ### 요구사항 5 - cookie
+* url.startWith 에서 login.html 접근하는것과 login  접근하려고 할 때, 구분하기위해 equals 로 변경
+* 브라우저는 Set-Cookkie 값을 읽어서 response Cookies 에 해당 값을 세팅한다.
 
 ### 요구사항 6 - stylesheet 적용
 
