@@ -25,11 +25,13 @@ memos 에 공부 내용 정리
 ### 요구사항 2 - get 방식으로 회원가입
 
 ### 요구사항 3 - post 방식으로 회원가입
-
+* Content-Length 길이만큼 Body를 읽는다.
 ### 요구사항 4 - redirect 방식으로 이동
-
+* HTTP 응답 헤더 : 302
+* 요구사항 5 - cookie
 ### 요구사항 5 - cookie
 
 ### 요구사항 6 - stylesheet 적용
 
 ### heroku 서버에 배포 후
+실습을 위한 개발 환경 세팅
