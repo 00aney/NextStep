@@ -36,6 +36,14 @@ memos 에 공부 내용 정리
 * 브라우저는 Set-Cookkie 값을 읽어서 response Cookies 에 해당 값을 세팅한다.
 
 ### 요구사항 6 - stylesheet 적용
+* 클라이언트가 서버에 요청에 보내면, html을 응답으로 보낸다.
+ 브라우저는 index.html 을 읽은 다음에, 그 안에 포함되어 있는 css, js, image 를 분석한 뒤, 서버에 재요청한다.
 
+* 개발자도구로 확인해보면 200 으로 나오긴 하지만, Content-Type 이 html로 인식해서 그렇다.
+ css 파일에 대해서는 다른 Content-Type을 지정한다.
+
+* request header를 보면 Accept: text/css 으로 요청이 오는데,
+ 이부분을 읽어서 response header에 Content-Type 값을 정해줘도 된다.
+ 
 ### heroku 서버에 배포 후
 실습을 위한 개발 환경 세팅
