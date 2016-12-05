@@ -26,9 +26,11 @@ memos 에 공부 내용 정리
 
 ### 요구사항 3 - post 방식으로 회원가입
 * Content-Length 길이만큼 Body를 읽는다.
+
 ### 요구사항 4 - redirect 방식으로 이동
 * HTTP 응답 헤더 : 302
 * 요구사항 5 - cookie
+
 ### 요구사항 5 - cookie
 
 ### 요구사항 6 - stylesheet 적용
