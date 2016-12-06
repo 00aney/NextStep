@@ -34,7 +34,10 @@ memos 에 공부 내용 정리
 * url.startWith 에서 login.html 접근하는것과 login  접근하려고 할 때, 구분하기위해 equals 로 변경
 * 브라우저는 Set-Cookkie 값을 읽어서 response Cookies 에 해당 값을 세팅한다.
 
-### 요구사항 6 - stylesheet 적용
+### 요구사항 6 - 사용자 목록 출력
+* Header에 Cookie 값 읽어서, 로그인 여부 체크
+
+### 요구사항 7 - stylesheet 적용
 * 클라이언트가 서버에 요청에 보내면, html을 응답으로 보낸다.
  브라우저는 index.html 을 읽은 다음에, 그 안에 포함되어 있는 css, js, image 를 분석한 뒤, 서버에 재요청한다.
 
