@@ -37,7 +37,7 @@ memos 에 공부 내용 정리
 ### 요구사항 6 - 사용자 목록 출력
 * Header에 Cookie 값 읽어서, 로그인 여부 체크
 * 로그인 성공 시, Cookie 값이 세팅되고 난뒤에 Header에는 Cookie값이 항상 있다.
-* Request 할 때마다, 로그인 여부 체크
+* Request 할 때마다, Cookie 값이 있는데 확인, 있다면 로그인 여부 체크
 
 ### 요구사항 7 - stylesheet 적용
 * 클라이언트가 서버에 요청에 보내면, html을 응답으로 보낸다.
